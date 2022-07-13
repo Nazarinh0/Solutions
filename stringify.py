@@ -1,12 +1,12 @@
-def to_str(item):
-    return str(item)
-
-def stringify(value, replacer=' ', spaces_count=1):
-    result = []
+def stringify(value, replacer = ' ', space_count = 1, _lvl = 1):
     if isinstance(value, dict):
-        result.append({str(k): str(v) for k, v in value.items()})
+        result = '{\n'
+        for el, val in value.items():
+            result += f'{replacer*space_count*_lvl}{el}: '
+            result += stringify(val, replacer, space_count, _lvl+1) + '\n'
+        result += replacer*space_count*(_lvl-1) + '}'
     else:
-        return str(value)
+        result = str(value)
     return result
 
 
