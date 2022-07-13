@@ -3,11 +3,10 @@ def to_str(item):
 
 def stringify(value, replacer=' ', spaces_count=1):
     result = []
-    if isinstance(value, (int, str)):
-        return str(value)
+    if isinstance(value, dict):
+        result.append({str(k): str(v) for k, v in value.items()})
     else:
-        for items in value:
-            result.append(stringify(items))
+        return str(value)
     return result
 
 
