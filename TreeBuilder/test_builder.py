@@ -1,4 +1,4 @@
-# from solution import TreeBuilder
+from tree_builder import TreeBuilder
 
 
 def test_tree_builder():
