@@ -43,14 +43,12 @@ class MultiKeyDict(object):
             value — сохраняемое по указанному ключу значение.
 
         """
-        # BEGIN (write your solution here)
         internal_key = self._keys.get(key)
         if internal_key is None:
             self._sequence += 1
             internal_key = self._sequence
             self._keys[key] = internal_key
         self._values[internal_key] = value
-        # END
 
     def alias(self, **kwargs):
         """
