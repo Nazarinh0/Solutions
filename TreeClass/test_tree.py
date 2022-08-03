@@ -1,4 +1,4 @@
-# from solution import Node
+from tree_class import Node
 
 
 def test_single_node():
