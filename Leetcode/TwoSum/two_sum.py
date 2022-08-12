@@ -1,4 +1,5 @@
 def two_sum(nums, target):
+    """Return indices of numbers that sums into target"""
     result = []
     for i, num in enumerate(nums):
         if (target - num) in nums[i+1:]:
