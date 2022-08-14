@@ -1,5 +1,4 @@
 from Leetcode.TwoSum.two_sum import two_sum
-import pytest
 
 nums = [2,7,11,15]
 target = 9
