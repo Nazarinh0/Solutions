@@ -1,4 +1,4 @@
-def longestCommonPrefix(strs):
+def lcp(strs):
     prefix = ''
     if len(strs) == 0:
         return prefix
