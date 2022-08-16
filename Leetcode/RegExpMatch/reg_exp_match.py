@@ -1,7 +1,7 @@
 import re
 
 
-def isMatch(string, pattern):
+def is_match(string, pattern):
     """Check if the given pattern matches input string.
     The matching should cover the entire input string (not partial)"""
     if re.fullmatch(pattern, string) is None:
@@ -10,4 +10,4 @@ def isMatch(string, pattern):
         return True
 
 
-print(isMatch('aa', 'a'))
+print(is_match('aa', 'a'))
