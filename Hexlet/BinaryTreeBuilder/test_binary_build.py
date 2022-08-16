@@ -1,4 +1,4 @@
-# from solution import Node
+from binary_build import Node
 
 
 def test_empty_node():
