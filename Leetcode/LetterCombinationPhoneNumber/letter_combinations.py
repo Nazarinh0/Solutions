@@ -25,10 +25,10 @@ def letter_combinations(digits):
                 i += 1
         return result
     else:
-        for item in letterCombinations(digits[0]):
-            for nextitem in letterCombinations(digits[1:]):
+        for item in letter_combinations(digits[0]):
+            for nextitem in letter_combinations(digits[1:]):
                 result.append(item + nextitem)
         return result
 
 
-# print(letter_combinations())
+print(letter_combinations("23"))
