@@ -1,4 +1,4 @@
-def letterCombinations(digits):
+def letter_combinations(digits):
     map = {
         "2": 'abc',
         "3": 'def',
@@ -29,3 +29,6 @@ def letterCombinations(digits):
             for nextitem in letterCombinations(digits[1:]):
                 result.append(item + nextitem)
         return result
+
+
+# print(letter_combinations())
