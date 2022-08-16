@@ -1,10 +1,10 @@
-def isPalindrome(x):
+def is_palindrome(num):
     '''Check if the given number is palindrome'''
-    if x < 0:
+    if num < 0:
         return False
     else:
-        string = str(x)
+        string = str(num)
         return string == string[::-1]
 
 
-print(isPalindrome(123))
+print(is_palindrome(123))
