@@ -1,4 +1,5 @@
 def remove_duplicates(nums):
+    """remove the duplicates in sorted array in-place"""
     if len(nums) == 0:
         return 0
     i = 0
