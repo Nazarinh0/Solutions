@@ -1,4 +1,4 @@
-def removeDuplicates(self, nums: List[int]) -> int:
+def remove_duplicates(nums):
     if len(nums) == 0:
         return 0
     i = 0
@@ -8,3 +8,5 @@ def removeDuplicates(self, nums: List[int]) -> int:
             nums[i] = nums[j]
         j += 1
     return i + 1
+
+print(remove_duplicates([1,1,2]))
