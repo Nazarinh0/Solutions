@@ -1,4 +1,5 @@
 def roman_to_int(str):
+    """Returns integer equivalent of a roman number"""
     NUMERALS = {'I': 1,
                 'V': 5,
                 'X': 10,
