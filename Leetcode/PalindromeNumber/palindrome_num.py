@@ -1,5 +1,5 @@
 def is_palindrome(num):
-    '''Check if the given number is palindrome'''
+    '''Checks if the given number is palindrome'''
     if num < 0:
         return False
     else:
