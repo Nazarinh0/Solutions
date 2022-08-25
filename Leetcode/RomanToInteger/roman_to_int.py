@@ -8,8 +8,10 @@ def roman_to_int(str):
                 'C': 100,
                 'D': 500,
                 'M': 1000}
+    
     result = 0
     i = 0
+    
     while i <= len(str) - 1:
         if i == len(str) - 1:
             result += NUMERALS[str[i]]
