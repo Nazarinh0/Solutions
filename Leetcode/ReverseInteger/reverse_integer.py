@@ -1,5 +1,6 @@
 def reverse(num):
     """Reverse the given number"""
+    
     tmp = str(abs(num))
     result = int(tmp[::-1])
     if num < 0:
