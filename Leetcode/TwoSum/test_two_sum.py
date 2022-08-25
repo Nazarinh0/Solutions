@@ -6,3 +6,4 @@ target = 9
 
 def test_two_sum():
     assert two_sum(nums, target) == [0,1]
+    
