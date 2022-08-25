@@ -1,6 +1,5 @@
 def remove_duplicates(nums):
-    """
-    removes the duplicates in sorted array in-place.
+    """removes the duplicates in sorted array in-place.
     returns number of slots in array
     """
     
