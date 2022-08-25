@@ -2,8 +2,7 @@ import re
 
 
 def is_match(string, pattern):
-    """
-    Check if the given pattern matches input string.
+    """Check if the given pattern matches input string.
     The matching should cover the entire input string (not partial)
     """
     
