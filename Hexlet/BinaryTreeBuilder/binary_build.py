@@ -14,3 +14,4 @@ class Node:
             if not self.left:
                 self.left = self.__class__()
             self.left.insert(key)
+            
