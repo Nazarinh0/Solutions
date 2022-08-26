@@ -64,3 +64,4 @@ def test_liskov_substitution():
 
     assert isinstance(tree.left, NewNode), "Sibling should be NewNode too"
     assert isinstance(tree.right, NewNode), "Sibling should be NewNode too"
+    
