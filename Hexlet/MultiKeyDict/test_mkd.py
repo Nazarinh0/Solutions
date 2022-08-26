@@ -21,3 +21,4 @@ def test_multikeydict_assignment():
     mkd.alias(z='y')
     mkd['z'] += [30]
     assert mkd['y'] == [10, 20, 30]
+    
