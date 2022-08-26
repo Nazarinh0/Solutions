@@ -57,3 +57,4 @@ def test_search_in_bad_tree():
     assert tree.search(6) is None
     assert tree.search(4).key == 4
     assert tree.search(22).key == 22
+    
