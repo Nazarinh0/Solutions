@@ -15,3 +15,4 @@ class Node:
                 return self.left.search(key)
         else:
             return None
+        
