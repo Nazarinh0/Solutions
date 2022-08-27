@@ -10,7 +10,6 @@ def stringify(value, replacer = ' ', space_count = 1, _lvl = 1):
     return result
 
 
-
 print(stringify({
     "string": "value",
     "boolean": True,
