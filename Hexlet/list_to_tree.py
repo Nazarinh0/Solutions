@@ -9,7 +9,6 @@ def convert(tree):
     return result
 
 
-
 tree = [
         ['key4', 'value4'],
         ['anotherKey', 'vakue']]
