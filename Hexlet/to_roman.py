@@ -28,4 +28,6 @@ NUMERALS = {  # noqa: WPS407
     'IV': 4,
     'I': 1,
 }
+
+
 print(to_roman(1234))
