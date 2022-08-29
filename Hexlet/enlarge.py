@@ -1,5 +1,6 @@
 def enlarge(image):
     result = []
+    
     for item in image:
         char_list = list(item)
         i = 0
@@ -11,6 +12,8 @@ def enlarge(image):
             i += 1
         result.extend([enlarged_line, enlarged_line])
     return result
+
+
 frame = [
     '****',
     '*  *',
