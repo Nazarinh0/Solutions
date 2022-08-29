@@ -21,4 +21,6 @@ frame = [
     '****'
 ]
 f = ['']
+
+
 print(enlarge(f))
