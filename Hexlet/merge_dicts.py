@@ -1,5 +1,6 @@
 def merged(*dicts):
     result = {}
+    
     for dictionary in dicts:
         for k, v in dictionary.items():
             result.setdefault(k, set()).add(v)
