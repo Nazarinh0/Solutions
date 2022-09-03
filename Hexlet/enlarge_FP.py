@@ -11,13 +11,12 @@ image = [
         '!#',
         '$@',
     ]
-# BEGIN (write your solution here)
+
 concat = curry(reduce)(add)
 concat_map = compose(compose(concat))(curry(map))
 
 enlarge = concat_map(compose(pair)(concat_map(dup)))
 
-# END
 
 print(concat)
 print(concat_map)
