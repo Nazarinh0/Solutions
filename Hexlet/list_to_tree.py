@@ -5,7 +5,6 @@ def to_item(item):
 
 def convert(tree):
     result = dict(map(to_item, tree))
-
     return result
 
 
