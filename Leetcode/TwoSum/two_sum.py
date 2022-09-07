@@ -1,5 +1,5 @@
 def two_sum(nums, target):
-    """Returns indices of numbers that sums into target"""
+    """Return indices of numbers that sums into target"""
     
     result = []
     
