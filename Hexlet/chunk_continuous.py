@@ -1,5 +1,4 @@
 def summary_ranges(nums):
-    
     if len(nums) < 2:
         return []
     
