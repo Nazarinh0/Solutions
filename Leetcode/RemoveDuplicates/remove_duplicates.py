@@ -14,4 +14,5 @@ def remove_duplicates(nums):
         j += 1
     return i + 1
 
+
 print(remove_duplicates([1,1,2]))
