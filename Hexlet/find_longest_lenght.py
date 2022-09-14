@@ -1,7 +1,9 @@
 def find_longest_length(string):
     substring = ''
+    
     if len(string) < 1:
         return 0
+    
     for char in string:
         if char not in substring:
             substring += char
