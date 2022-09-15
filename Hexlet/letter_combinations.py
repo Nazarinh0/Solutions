@@ -13,10 +13,12 @@ def letter_combinations(digits):
     
     if len(digits) == 0:
         return result
+    
     elif len(digits) == 1:
         for item in map[digits]:
             result.append(item)
         return result
+    
     elif len(digits) == 2:
         for x, y in zip(digits, digits[1:]):
             i = 0
@@ -25,6 +27,7 @@ def letter_combinations(digits):
                     result.append(map[x][i] + item)
                 i += 1
         return result
+    
     else:
         for item in letter_combinations(digits[0]):
             for nextitem in letter_combinations(digits[1:]):
