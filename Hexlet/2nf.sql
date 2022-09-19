@@ -13,7 +13,6 @@ INSERT INTO old_cars VALUES
 ('m1', 'bmw', 2500000, 5),
 ('almera', 'nissan', 5500000, 10),
 ('gt-r', 'nissan', 5000000, 10);
-
 -- END OF OLD TABLE
 
 
