@@ -1,5 +1,3 @@
---noqa: disable=L010
--- BEGIN (write your solution here)
 CREATE TABLE users (
     id bigint PRIMARY KEY,
     first_name varchar(255),
@@ -18,5 +16,4 @@ CREATE TABLE orders(
 INSERT INTO orders VALUES
 (1, 'Tom', 2, '2022-09-19'),
 (2, 'Tom', 4, '2022-05-25');
---END
 
