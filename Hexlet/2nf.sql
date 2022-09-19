@@ -39,4 +39,3 @@ INSERT INTO cars VALUES
 (3, 1, 'm1', 2500000),
 (4, 2, 'almera', 5500000),
 (5, 2, 'gt-r', 5000000);
-
