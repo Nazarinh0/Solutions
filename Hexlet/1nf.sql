@@ -16,4 +16,3 @@ CREATE TABLE orders(
 INSERT INTO orders VALUES
 (1, 'Tom', 2, '2022-09-19'),
 (2, 'Tom', 4, '2022-05-25');
-
