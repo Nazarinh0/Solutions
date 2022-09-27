@@ -15,7 +15,7 @@ INSERT INTO old_cars VALUES
 ('gt-r', 'nissan', 5000000, 10);
 -- END OF OLD TABLE
 
-
+--NORMALIZED TABLE
 CREATE TABLE brands (
     id bigint PRIMARY KEY,
     name varchar(255),
