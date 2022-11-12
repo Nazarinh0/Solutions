@@ -1,5 +1,6 @@
 def build_query_string(source):
     result = ''
+    
     for k, v in sorted(source.items()):
         result = result + k + '=' + str(v)
         result += '&'

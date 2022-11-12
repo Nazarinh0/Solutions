@@ -32,9 +32,11 @@ def to_arabic(str):
     if len(str) < 1:
         return 0
     arabic = 0
+    
     for char in str:
         if char not in NUMERALS.keys():
             return False
+    
     for i in range(len(str) - 1):
         if NUMERALS[str[i]] < NUMERALS[str[i + 1]] and str[i] in ['V', 'L', 'D']:
             return False
@@ -42,6 +44,7 @@ def to_arabic(str):
             arabic += -NUMERALS[str[i]]
             continue
         arabic += NUMERALS[str[i]]
+    
     arabic += NUMERALS[str[-1]]
     return arabic
 
