@@ -1,4 +1,4 @@
-def stringify(value, replacer = ' ', space_count = 1, _lvl = 1):
+def stringify(value, replacer=' ', space_count=1, _lvl=1):
     if isinstance(value, dict):
         result = '{\n'
         for el, val in value.items():
