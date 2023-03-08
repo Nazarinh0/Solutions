@@ -10,5 +10,5 @@ def convert(tree):
 
 tree = [
         ['key4', 'value4'],
-        ['anotherKey', 'vakue']]
+        ['anotherKey', 'value']]
 print(convert(tree))
