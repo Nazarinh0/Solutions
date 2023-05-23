@@ -8,12 +8,12 @@ def solution(source, order='asc'):
 
 
 def sort(items, left, right, order):
-
     length = right - left + 1
+    
     if length < 2:
         return items
+    
     pivot = items[left]
-
     split_index = partition(items, left, right, pivot, order)
     sort(items, left, split_index - 1, order)
     sort(items, split_index, right, order)
@@ -31,6 +31,7 @@ def partition(items, left, right, pivot, comparator):
             left += 1
         while comparator(items[right], pivot) > 0:
             right -= 1
+
         if left >= right:
             return right + 1
         items[left], items[right] = items[right], items[left]
