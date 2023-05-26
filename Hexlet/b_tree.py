@@ -26,7 +26,7 @@ def find_values_in_range(node, min, max):
 
     # Поиск значений в текущем узле
     for i in range(len(keys)):
-        if keys[i] >= min and keys[i] <= max:
+        if min <= keys[i] <= max:
             values.append(keys[i])
 
     # Рекурсивный поиск значений в дочерних узлах
@@ -36,7 +36,7 @@ def find_values_in_range(node, min, max):
                 values.extend(find_values_in_range(children[i], min, max))
             elif i == len(children) - 1 and keys[-1] <= max:
                 values.extend(find_values_in_range(children[i], min, max))
-            elif i < len(children) - 1 and (keys[i] >= min and keys[i] <= max):
+            elif i < len(children) - 1 and (min <= keys[i] <= max):
                 values.extend(find_values_in_range(children[i], min, max))
 
     return values
