@@ -1,16 +1,10 @@
-def count_black_nodes(node):
-    def walk(node):
-        if not node:
-            return 0
-        count = 0 if node.is_red else 1
-        count += walk(node.left)
-        return count
-    return walk(node) - 1
-
-
-def solution(data):
-    tree = build_rbtree(data)
-    return count_black_nodes(tree)
+class RBTreeNode:
+    def __init__(self, value, parent=None):
+        self.left = None
+        self.right = None
+        self.is_red = False
+        self.parent = parent
+        self.value = value
 
 
 def build_rbtree(data):
@@ -25,10 +19,17 @@ def build_rbtree(data):
     return root
 
 
-class RBTreeNode:
-    def __init__(self, value, parent=None):
-        self.left = None
-        self.right = None
-        self.is_red = False
-        self.parent = parent
-        self.value = value
+def count_black_nodes(node):
+    def walk(node):
+        if not node:
+            return 0
+        count = 0 if node.is_red else 1
+        count += walk(node.left)
+        return count
+
+    return walk(node) - 1
+
+
+def solution(data):
+    tree = build_rbtree(data)
+    return count_black_nodes(tree)
