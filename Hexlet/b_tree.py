@@ -1,8 +1,8 @@
 class BTreeNode:
     def __init__(self, keys):
-        self.leaf = False
-        self.keys = keys
-        self.children = []
+        self.leaf = False # Флаг, который показывает, что текущий узел является листовым
+        self.keys = keys # Массив ключей (полезной нагрузки) узла
+        self.children = [] # Массив дочерних узлов
 
 
 def build_b_tree(data):
