@@ -1,4 +1,6 @@
 import math
+
+
 class KDTreeNode:
     def __init__(self, point, dimension, parent):
         self.point = point
@@ -28,3 +30,30 @@ def build_tree(points, depth, dimensions, parent):
     node.right = build_tree(points[median + 1:], depth + 1, dimensions, node)
 
     return node
+
+
+def solution(points, center_point, radius):
+    tree = build_tree(points, 0, ['x', 'y'], None)
+    return find_points_in_radius(tree, center_point, radius)
+
+
+def distance(p1, p2):
+        return math.sqrt((p1['x'] - p2['x']) ** 2 + (p1['y'] - p2['y']) ** 2)
+
+
+def find_points_in_radius(tree, danger_point, radius):
+    result = []
+
+    def search(node):
+        if not node:
+            return
+        if distance(node.point, danger_point) <= radius:
+            result.append(node.point)
+        if (node.dimension == 'x' and (danger_point['x'] - radius) < node.point['x']) or \
+           (node.dimension == 'y' and (danger_point['y'] - radius) < node.point['y']):
+           search(node.left)
+        if (node.dimension == 'x' and (danger_point['x'] + radius) > node.point['x']) or \
+           (node.dimension == 'y' and (danger_point['y'] + radius) > node.point['y']):
+           search(node.right)
+    search(tree)
+    return result
