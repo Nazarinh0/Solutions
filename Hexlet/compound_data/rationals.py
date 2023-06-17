@@ -33,3 +33,59 @@
 # mul(rat1, rat2)  # 14/6
 # div(rat1, rat2)  # 4/21
 
+# BEGIN (write your solution here)
+def make(numer, denom):
+    return cons(numer, denom)
+
+
+def numer(rat):
+    return car(rat)
+
+
+def denom(rat):
+    return cdr(rat)
+
+
+def to_string(rat):
+    return f'{numer} / {denom}'
+
+
+def is_equal(rat1, rat2):
+    a = numer(rat1)
+    b = denom(rat1)
+    c = numer(rat2)
+    d = denom(rat2)
+    return (a * d) == (c * b)
+
+
+def add(rat1, rat2):
+    a = numer(rat1)
+    b = denom(rat1)
+    c = numer(rat2)
+    d = denom(rat2)
+    return ((a * b) + (b * c)) / (b * d)
+
+
+def sub(rat1, rat2):
+    a = numer(rat1)
+    b = denom(rat1)
+    c = numer(rat2)
+    d = denom(rat2)
+    return ((a * d) - (b * c)) / (b * d)
+
+
+def mul(rat1, rat2):
+    a = numer(rat1)
+    b = denom(rat1)
+    c = numer(rat2)
+    d = denom(rat2)
+    return (a * c) / (b * d)
+
+
+def div(rat1, rat2):
+    a = numer(rat1)
+    b = denom(rat1)
+    c = numer(rat2)
+    d = denom(rat2)
+    return (a * d) / (b * c)
+# END
