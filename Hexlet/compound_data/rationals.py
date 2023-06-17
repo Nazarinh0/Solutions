@@ -46,8 +46,9 @@ def denom(rat):
     return cdr(rat)
 
 
-def to_string(rat):
-    return f'{numer} / {denom}'
+def to_string2(rat):
+    return f"{numer(rat)} / {denom(rat)}"
+# END
 
 
 def is_equal(rat1, rat2):
@@ -89,3 +90,29 @@ def div(rat1, rat2):
     d = denom(rat2)
     return (a * d) / (b * c)
 # END
+
+# BEGIN
+
+def add2(x, y):
+    return make(
+        (numer(x) * denom(y)) + (numer(y) * denom(x)), denom(x) * denom(y),
+    )
+
+
+def sub2(x, y):
+    return make(
+        (numer(x) * denom(y)) - (numer(y) * denom(x)), denom(x) * denom(y),
+    )
+
+
+def is_equal2(x, y):
+    return numer(x) * denom(y) == numer(y) * denom(x)
+
+
+def mul2(x, y):
+    return make(numer(x) * numer(y), denom(x) * denom(y))
+
+
+def div2(x, y):
+    return make(numer(x) * denom(y), denom(x) * numer(y))
+
