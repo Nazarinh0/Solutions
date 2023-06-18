@@ -18,4 +18,3 @@ func MinInt(x, y int) int {
 func IsValid(id int, text string) bool {
 	return id > 0 && text != ""
   }
-  
