@@ -26,3 +26,17 @@ func main() {
     n = "Karl"
     fmt.Println(n + " is a " + statusByName(n)) // Karl is a single person
 }
+
+// Реализуйте функцию, которая добавляет язык locale как поддомен к домену domain. 
+// Язык может прийти пустым, тогда нужно добавить поддомен en.. 
+// Например:
+// DomainForLocale("site.com", "") // en.site.com
+// DomainForLocale("site.com", "ru") // ru.site.com
+
+func DomainForLocale(domain, locale string) string {
+	if locale == "" {
+		locale = "en"
+	}
+
+	return fmt.Sprintf("%s.%s", locale, domain)
+}
