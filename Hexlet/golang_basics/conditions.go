@@ -68,3 +68,33 @@ func ModifySpaces(s, mode string) string {
 
 	return strings.ReplaceAll(s, " ", replacement)
 }
+
+// Представим, что нам нужно написать конвертер ошибок в числовой формат для gRPC.
+// Реализуйте функцию, которая возвращает числовой код для заданного значения. 
+// Список сообщений и соответствующих кодов:
+// OK = 0
+// CANCELLED = 1
+// UNKNOWN = 2
+
+const (
+	OkMsg        = "OK"
+	CancelledMsg = "CANCELLED"
+)
+
+const (
+	OkCode = iota
+	CancelledCode
+	UnknownCode
+)
+
+func ErrorMessageToCode(msg string) int {
+	switch msg {
+	case OkMsg:
+		return OkCode
+	case CancelledMsg:
+		return CancelledCode
+	}
+
+	return UnknownCode
+}
+ErrorMessageToCode("CANCELLED")
