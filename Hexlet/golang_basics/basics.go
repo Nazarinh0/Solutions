@@ -5,7 +5,7 @@ import "math"
 
 // Converting int to string
 func IntToString(num int) string {
-  	return strconv.Itoa(num)
+  		return strconv.Itoa(num)
 }
 
 // Getting minimum of two given number, math.Min takes float64 type
