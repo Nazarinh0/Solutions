@@ -13,10 +13,11 @@ func Map1(strs []string, mapFunc func(string) string) []string {
         return result
 }
 
-func Map(strs [string], mapFunc func(string) string) []string {
+
+func Map2(strs [string], mapFunc func(string) string) []string {
 		mapped := make([]string, len(strs))
 		for i, s := range strs {
-			mapped[i] = mapFunc(s)
+				mapped[i] = mapFunc(s)
 		}
 
 		return mapped
