@@ -96,8 +96,8 @@ func UniqueSortedUserIDs2(userIDs []int64) []int64 {
 		uniqPointer := 0
 		for i := 1; i < len(userIDs); i++ {
 				if userIDs[uniqPointer] != userIDs[i] {
-					uniqPointer++
-					userIDs[uniqPointer] = userIDs[i]
+						uniqPointer++
+						userIDs[uniqPointer] = userIDs[i]
 				}
 		}
 
