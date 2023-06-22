@@ -110,6 +110,7 @@ func UniqueSortedUserIDs2(userIDs []int64) []int64 {
 func UniqueUserIDs(userIDs []int64) []int64 {
 		uniqueIDs := make([]int64, 0, len(userIDs))
 		seen := make(map[int64]bool)
+		
 		for _, id := range userIDs {
 				if !seen[id] {
 						uniqueIDs = append(uniqueIDs, id)
