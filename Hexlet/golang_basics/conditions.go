@@ -6,14 +6,14 @@ import (
 )
 
 func statusByName(name string) string {
-    // функция проверяет, что строка name начинается с подстроки "Mr."
-    if strings.HasPrefix(name, "Mr.") {
-        return "married man"
-    } else if strings.HasPrefix(name, "Mrs.") {
-        return "married woman"
-    } else {
-        return "single person"
-    }
+		// функция проверяет, что строка name начинается с подстроки "Mr."
+		if strings.HasPrefix(name, "Mr.") {
+				return "married man"
+		} else if strings.HasPrefix(name, "Mrs.") {
+				return "married woman"
+		} else {
+				return "single person"
+		}
 }
 
 func main() {
