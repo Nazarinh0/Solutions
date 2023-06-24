@@ -1,8 +1,8 @@
 package main
 
 import (
-    "fmt"
-    "strings"
+		"fmt"
+		"strings"
 )
 
 func statusByName(name string) string {
