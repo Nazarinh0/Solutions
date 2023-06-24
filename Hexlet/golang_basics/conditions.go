@@ -17,14 +17,14 @@ func statusByName(name string) string {
 }
 
 func main() {
-    n := "Mr. Doe"
-    fmt.Println(n + " is a " + statusByName(n)) // Mr. Doe is a married man
+		n := "Mr. Doe"
+		fmt.Println(n + " is a " + statusByName(n)) // Mr. Doe is a married man
 
-    n = "Mrs. Berry"
-    fmt.Println(n + " is a " + statusByName(n)) // Mrs. Berry is a married woman
+		n = "Mrs. Berry"
+		fmt.Println(n + " is a " + statusByName(n)) // Mrs. Berry is a married woman
 
-    n = "Karl"
-    fmt.Println(n + " is a " + statusByName(n)) // Karl is a single person
+		n = "Karl"
+		fmt.Println(n + " is a " + statusByName(n)) // Karl is a single person
 }
 
 // Реализуйте функцию, которая добавляет язык locale как поддомен к домену domain. 
