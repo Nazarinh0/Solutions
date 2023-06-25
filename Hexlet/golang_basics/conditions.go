@@ -77,14 +77,14 @@ func ModifySpaces(s, mode string) string {
 // UNKNOWN = 2
 
 const (
-	OkMsg        = "OK"
-	CancelledMsg = "CANCELLED"
+		OkMsg        = "OK"
+		CancelledMsg = "CANCELLED"
 )
 
 const (
-	OkCode = iota
-	CancelledCode
-	UnknownCode
+		OkCode = iota
+		CancelledCode
+		UnknownCode
 )
 
 func ErrorMessageToCode(msg string) int {
