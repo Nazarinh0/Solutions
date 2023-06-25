@@ -88,13 +88,13 @@ const (
 )
 
 func ErrorMessageToCode(msg string) int {
-	switch msg {
-	case OkMsg:
-		return OkCode
-	case CancelledMsg:
-		return CancelledCode
-	}
+		switch msg {
+		case OkMsg:
+			return OkCode
+		case CancelledMsg:
+			return CancelledCode
+		}
 
-	return UnknownCode
+		return UnknownCode
 }
 ErrorMessageToCode("CANCELLED")
