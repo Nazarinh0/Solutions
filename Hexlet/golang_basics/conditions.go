@@ -55,18 +55,18 @@ func DomainForLocale(domain, locale string) string {
 // strings.ReplaceAll("one two three", " ", "_") // one_two_three
 
 func ModifySpaces(s, mode string) string {
-	var replacement string
+		var replacement string
 
-	switch mode {
-	case "dash":
-		replacement = "-"
-	case "underscore":
-		replacement = "_"
-	default:
-		replacement = "*"
-	}
+		switch mode {
+		case "dash":
+			replacement = "-"
+		case "underscore":
+			replacement = "_"
+		default:
+			replacement = "*"
+		}
 
-	return strings.ReplaceAll(s, " ", replacement)
+		return strings.ReplaceAll(s, " ", replacement)
 }
 
 // Представим, что нам нужно написать конвертер ошибок в числовой формат для gRPC.
