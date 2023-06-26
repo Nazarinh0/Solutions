@@ -34,11 +34,11 @@ func main() {
 // DomainForLocale("site.com", "ru") // ru.site.com
 
 func DomainForLocale(domain, locale string) string {
-	if locale == "" {
-		locale = "en"
-	}
-
-	return fmt.Sprintf("%s.%s", locale, domain)
+		if locale == "" {
+			locale = "en"
+		}
+	
+		return fmt.Sprintf("%s.%s", locale, domain)
 }
 
 // Реализуйте функцию, которая изменяет строку s в зависимости от переданного режима mode. 
@@ -90,9 +90,9 @@ const (
 func ErrorMessageToCode(msg string) int {
 		switch msg {
 		case OkMsg:
-			return OkCode
+				return OkCode
 		case CancelledMsg:
-			return CancelledCode
+				return CancelledCode
 		}
 
 		return UnknownCode
