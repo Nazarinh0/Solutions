@@ -17,3 +17,18 @@ func ShiftASCII(s string, step int) string {
 		}
 		return newStr
 	}
+
+
+func ShiftASCII2(s string, step int) string {
+		if step == 0 {
+				return s
+		}
+
+		shifted := make([]byte, len(s))
+		for i := 0; i < len(s); i++ {
+				shift := step + int(s[i])
+				shifted[i] = byte(shift)
+		}
+
+		return string(shifted)
+}
