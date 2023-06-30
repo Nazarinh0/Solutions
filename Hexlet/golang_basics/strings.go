@@ -32,3 +32,14 @@ func ShiftASCII2(s string, step int) string {
 
 		return string(shifted)
 }
+
+
+// Реализуйте функцию, которая возвращает true, если строка s состоит только из ASCII символов.
+func IsASCII(s string) bool {
+		for _, ch := range s {
+				if ch > 127 {  // можно unicode.MaxASCII вместо 127
+						return false
+				}
+		}
+		return true
+}
