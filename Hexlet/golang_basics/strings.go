@@ -1,5 +1,12 @@
 package pkg
 
+
+import (
+		"strings"
+		"unicode"
+)
+
+
 // Реализуйте функцию, которая принимает на вход состоящую из ASCII символов строку s
 // и возвращает новую строку, где каждый символ из входящей строки сдвинут вперед на число step.
 
@@ -42,4 +49,18 @@ func IsASCII(s string) bool {
 				}
 		}
 		return true
+}
+
+
+// Реализуйте функцию, которая возвращает только латинские символы из строки s.
+// Например:
+// LatinLetters("привет world!") // "world"
+func LatinLetters1(s string) string {
+	latin := strings.Builder{}
+	for _, ch := range s {
+			if unicode.Is(unicode.Latin, ch) {
+					latin.WriteString(string(ch))
+			}
+	}
+	return latin.String()
 }
