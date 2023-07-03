@@ -23,7 +23,7 @@ func ShiftASCII(s string, step int) string {
 				newStr += string(b + byte(step))
 		}
 		return newStr
-	}
+}
 
 
 func ShiftASCII2(s string, step int) string {
