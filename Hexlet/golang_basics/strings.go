@@ -56,23 +56,25 @@ func IsASCII(s string) bool {
 // Например:
 // LatinLetters("привет world!") // "world"
 func LatinLetters1(s string) string {
-	latin := strings.Builder{}
-	for _, ch := range s {
-			if unicode.Is(unicode.Latin, ch) {
-					latin.WriteString(string(ch))
-			}
-	}
-	return latin.String()
+		latin := strings.Builder{}
+		
+		for _, ch := range s {
+				if unicode.Is(unicode.Latin, ch) {
+						latin.WriteString(string(ch))
+				}
+		}
+		
+		return latin.String()
 }
 
 func LatinLetters2(s string) string {
-	sb := &strings.Builder{}
+		sb := &strings.Builder{}
 
-	for _, r := range s {
-		if unicode.Is(unicode.Latin, r) {
-			sb.WriteRune(r)
+		for _, r := range s {
+				if unicode.Is(unicode.Latin, r) {
+						sb.WriteRune(r)
+				}
 		}
-	}
 
-	return sb.String()
+		return sb.String()
 }
