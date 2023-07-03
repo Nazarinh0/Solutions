@@ -64,3 +64,15 @@ func LatinLetters1(s string) string {
 	}
 	return latin.String()
 }
+
+func LatinLetters2(s string) string {
+	sb := &strings.Builder{}
+
+	for _, r := range s {
+		if unicode.Is(unicode.Latin, r) {
+			sb.WriteRune(r)
+		}
+	}
+
+	return sb.String()
+}
