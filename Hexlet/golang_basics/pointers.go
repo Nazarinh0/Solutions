@@ -33,8 +33,11 @@ func CopyParent(p *Parent) Parent {
 		if p == nil {
 				return Parent{}
 		}
-		children := make([]Child, len(p.Children))
-		copy(children, p.Children)
+		copyChildren := make([]Child, len(p.Children))
+		// for i, child := range p.Children {
+		// 	copyChildren[i] = child
+	  	// }
+		copy(copyChildren, p.Children)
 		return Parent{
 				Name:     p.Name,
 				Children: children,
