@@ -16,7 +16,7 @@ func (head *ListNode) Reverse() *ListNode {
 		for curr != nil {
 				r = &ListNode{
 						Next: r,
-						Val:  curr.Val,
+						Val: curr.Val,
 				}
 				curr = curr.Next
 		}
