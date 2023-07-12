@@ -50,3 +50,28 @@ func (head *ListNode) Reverse() *ListNode {
 
 		return r
 }
+
+
+// Представим, что есть структура Person, содержащая возраст человека:
+type Person struct {
+    Age uint8
+}
+// Реализуйте тип PersonList (слайс структур Person), 
+// с методом GetAgePopularity(), который возвращает мапу, где ключ — возраст, а значение — кол-во таких возрастов:
+
+// pl := PersonList{
+//   {Age: 18},
+//   {Age: 44},
+//   {Age: 18},
+// }
+
+// pl.GetAgePopularity() // map[18:2 44:1]
+type PersonList []Person
+func (p1 PersonList) GetAgePopularity() map[uint8]int {
+        r := make(map[uint8]int)
+
+        for _, v := range(p1) {
+                r[v.Age]++
+        }
+        return r
+}
