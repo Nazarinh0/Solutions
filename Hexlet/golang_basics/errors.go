@@ -77,37 +77,37 @@ func DecodeAndValidateRequest(requestBody []byte) (CreateUserRequest, error) {
 
 
 func DecodeAndValidateRequest2(requestBody []byte) (CreateUserRequest, error) {
-	req := CreateUserRequest{}
+		req := CreateUserRequest{}
 
-	err := json.Unmarshal(requestBody, &req)
-	if err != nil {
-		return CreateUserRequest{}, err
-	}
+		err := json.Unmarshal(requestBody, &req)
+		if err != nil {
+				return CreateUserRequest{}, err
+		}
 
-	err = validateCreateUserRequest(req)
-	if err != nil {
-		return CreateUserRequest{}, err
-	}
+		err = validateCreateUserRequest(req)
+		if err != nil {
+				return CreateUserRequest{}, err
+		}
 
-	return req, nil
+		return req, nil
 }
 
 func validateCreateUserRequest(req CreateUserRequest) error {
-	if req.Email == "" {
-		return ErrEmailRequired
-	}
+		if req.Email == "" {
+				return ErrEmailRequired
+		}
 
-	if req.Password == "" {
-		return ErrPasswordRequired
-	}
+		if req.Password == "" {
+				return ErrPasswordRequired
+		}
 
-	if req.PasswordConfirmation == "" {
-		return ErrPasswordConfirmationRequired
-	}
+		if req.PasswordConfirmation == "" {
+				return ErrPasswordConfirmationRequired
+		}
 
-	if req.Password != req.PasswordConfirmation {
-		return ErrPasswordDoesNotMatch
-	}
+		if req.Password != req.PasswordConfirmation {
+				return ErrPasswordDoesNotMatch
+		}
 
-	return nil
+		return nil
 }
