@@ -26,7 +26,11 @@ import (
 
 //     fmt.Printf("error: %s, struct: %+v\n", err, hw) // error: %!s(<nil>), struct: {Hello:world}
 // }
-// В API методах часто используются запросы с телом в виде JSON. Такие тела нужно декодировать в структуры и валидировать. Хоть это и не лучшая практика делать функции, в которых происходит несколько действий, но для простоты примера реализуйте функцию DecodeAndValidateRequest(requestBody []byte) (CreateUserRequest, error), которая декодирует тело запроса из JSON в структуру CreateUserRequest и валидирует ее. Если приходит невалидный JSON или структура заполнена неверно, функция должна вернуть ошибку.
+// В API методах часто используются запросы с телом в виде JSON. 
+// Такие тела нужно декодировать в структуры и валидировать. 
+// Хоть это и не лучшая практика делать функции, в которых происходит несколько действий, 
+// но для простоты примера реализуйте функцию, которая декодирует тело запроса из JSON в структуру CreateUserRequest и валидирует ее. 
+// Если приходит невалидный JSON или структура заполнена неверно, функция должна вернуть ошибку.
 
 // Структура запроса:
 
@@ -69,4 +73,41 @@ func DecodeAndValidateRequest(requestBody []byte) (CreateUserRequest, error) {
         }
         return r, err
 
+}
+
+
+func DecodeAndValidateRequest2(requestBody []byte) (CreateUserRequest, error) {
+	req := CreateUserRequest{}
+
+	err := json.Unmarshal(requestBody, &req)
+	if err != nil {
+		return CreateUserRequest{}, err
+	}
+
+	err = validateCreateUserRequest(req)
+	if err != nil {
+		return CreateUserRequest{}, err
+	}
+
+	return req, nil
+}
+
+func validateCreateUserRequest(req CreateUserRequest) error {
+	if req.Email == "" {
+		return ErrEmailRequired
+	}
+
+	if req.Password == "" {
+		return ErrPasswordRequired
+	}
+
+	if req.PasswordConfirmation == "" {
+		return ErrPasswordConfirmationRequired
+	}
+
+	if req.Password != req.PasswordConfirmation {
+		return ErrPasswordDoesNotMatch
+	}
+
+	return nil
 }
