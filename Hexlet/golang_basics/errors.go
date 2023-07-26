@@ -111,3 +111,61 @@ func validateCreateUserRequest(req CreateUserRequest) error {
 
 		return nil
 }
+
+
+
+
+// Какая-то функция возвращает критичные и некритичные ошибки:
+
+// // некритичная ошибка валидации
+type NonCriticalError struct{}
+
+func (e NonCriticalError) Error() string {
+    return "validation error"
+}
+ 
+// // критичные ошибки
+var (
+    ErrBadConnection = errors.New("bad connection")
+    ErrBadRequest    = errors.New("bad request")
+)
+// Реализуйте функцию, которая возвращает текст ошибки, если она критичная. 
+// Если ошибка некритичная, то возвращается пустая строка. 
+// В случае неизвестной ошибки возвращается строка unknown error:
+
+// GetErrorMsg(errors.New("bad connection")) // "bad connection"
+// GetErrorMsg(errors.New("bad request")) // "bad request"
+// GetErrorMsg(NonCriticalError{}) // ""
+// GetErrorMsg(errors.New("random error")) // "unknown error"
+const UnknownErrorMsg = "unknown error"
+
+func GetErrorMsg(err error) string {
+	if errors.As(err, &NonCriticalError{}) {
+			return ""
+	}
+	if errors.Is(err, ErrBadConnection) {
+				return ErrBadConnection.Error()
+	}
+	if errors.Is(err, ErrBadRequest) {
+				return ErrBadRequest.Error()
+	}
+	return UnknownErrorMsg
+
+}
+
+var criticalErrs = []error{ErrBadRequest, ErrBadConnection}
+
+// GetErrorMsg returns the err message if the error is critical. Otherwise it returns an empty string.
+func GetErrorMsg2(err error) string {
+	for _, crErr := range criticalErrs {
+		if errors.Is(err, crErr) {
+			return crErr.Error()
+		}
+	}
+
+	if errors.As(err, &NonCriticalError{}) {
+		return ""
+	}
+
+	return UnknownErrorMsg
+}
