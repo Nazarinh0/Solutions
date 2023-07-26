@@ -157,15 +157,15 @@ var criticalErrs = []error{ErrBadRequest, ErrBadConnection}
 
 // GetErrorMsg returns the err message if the error is critical. Otherwise it returns an empty string.
 func GetErrorMsg2(err error) string {
-	for _, crErr := range criticalErrs {
-		if errors.Is(err, crErr) {
-			return crErr.Error()
+		for _, crErr := range criticalErrs {
+				if errors.Is(err, crErr) {
+						return crErr.Error()
+				}
 		}
-	}
 
-	if errors.As(err, &NonCriticalError{}) {
-		return ""
-	}
+		if errors.As(err, &NonCriticalError{}) {
+				return ""
+		}
 
-	return UnknownErrorMsg
+		return UnknownErrorMsg
 }
