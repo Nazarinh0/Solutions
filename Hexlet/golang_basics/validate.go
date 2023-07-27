@@ -18,8 +18,8 @@ import (
 
 
 type UserCreateRequest struct {
-	FirstName string
-	Age       int
+		FirstName string
+		Age       int
 }
 
 
