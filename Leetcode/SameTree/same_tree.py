@@ -16,6 +16,7 @@ def is_same_tree(p, q):
         return is_same_tree(p.left, q.left) and is_same_tree(p.right, q.right)
     return False
 
+
 def isSameTree(p, q):
     def check(p, q):
         if not p and not q:
