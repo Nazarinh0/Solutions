@@ -1,5 +1,5 @@
 def lcp(strs):
-    """returns the longest common prefix of a given strings"""
+    """Returns the longest common prefix of a given strings"""
     
     prefix = ""
 
